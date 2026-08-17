@@ -1,0 +1,336 @@
+/* ============================================
+   Global Dark Mode Overrides
+   Active ONLY when html.dark is present
+   NO !important on rules that Tailwind handles
+   ============================================ */
+
+/* Smooth transition */
+html.dark body {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Body background */
+html.dark body {
+  background-color: #141D22;
+  color: #e5e7eb;
+}
+
+/* White/Gray backgrounds */
+html.dark .bg-white {
+  background-color:  #141D22;
+}
+
+html.dark .bg-gray-50 {
+  background-color:  #141D22;
+}
+
+html.dark .bg-gray-100 {
+  background-color:  #141D22;
+}
+
+html.dark .bg-gray-200 {
+  background-color:  #141D22;
+}
+
+/* Text colors (NO !important - let Tailwind handle it) */
+html.dark .text-gray-700,
+html.dark .text-gray-800,
+html.dark .text-gray-900 {
+  color: #d1d5db;
+}
+
+html.dark .text-gray-500,
+html.dark .text-gray-600 {
+  color: #9ca3af;
+}
+
+html.dark .text-black {
+  color: #f3f4f6;
+}
+
+/* Borders (NO !important) */
+html.dark .border-gray-200,
+html.dark .border-gray-300,
+html.dark .border-orange-300 {
+  border-color: #1f2937;
+}
+
+/* Input fields (NO !important - let Tailwind handle it) */
+html.dark input,
+html.dark select,
+html.dark textarea {
+  background-color: #141D22;
+  color: #e5e7eb;
+  border-color: #1f2937;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #6b7280;
+}
+
+html.dark input:focus,
+html.dark select:focus,
+html.dark textarea:focus {
+  /* border-color: #f97316; */
+}
+
+/* Tables */
+html.dark table {
+  background-color: #141D22;
+  color: #e5e7eb;
+}
+
+html.dark thead {
+  background-color: #141D22;
+}
+
+html.dark th {
+  color: #9ca3af;
+  border-color: #1f2937;
+}
+
+html.dark td {
+  border-color: #1f2937;
+}
+
+html.dark tbody tr:hover {
+  background-color:  #141D22;
+}
+
+/* Scrollbar */
+/* html.dark ::-webkit-scrollbar { width: 6px; height: 6px; }
+html.dark ::-webkit-scrollbar-track { background:  #141D22; }
+html.dark ::-webkit-scrollbar-thumb { background:  #141D22; border-radius: 3px; }
+html.dark ::-webkit-scrollbar-thumb:hover { background: #374151; } */
+
+/* Dark Mode Scrollbar */
+html.dark ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+html.dark ::-webkit-scrollbar-track {
+    background: #141D22;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+    background: #4B5563;
+    border-radius: 10px;
+    border: 2px solid #141D22;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+    background: #6B7280;
+}
+
+/* Modal / Overlay backgrounds */
+html.dark [class*="bg-black/"] {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Shadow cards */
+html.dark .shadow-lg,
+html.dark .shadow-xl {
+  background-color: #141D22;
+  border: 1px solid #1f2937;
+}
+
+/* React-Toastify */
+html.dark .Toastify__toast { 
+  background-color: #1e2a33 !important; 
+  color: #e5e7eb !important;
+  border: 1px solid #2a3640 !important;
+}
+html.dark .Toastify__toast--success {
+  background: linear-gradient(135deg, #1a2e1a 0%, #1e2a33 100%) !important;
+  border-left: 4px solid #22c55e !important;
+}
+html.dark .Toastify__toast--error {
+  background: linear-gradient(135deg, #2e1a1a 0%, #1e2a33 100%) !important;
+  border-left: 4px solid #ef4444 !important;
+}
+html.dark .Toastify__toast--warning {
+  background: linear-gradient(135deg, #2e2a1a 0%, #1e2a33 100%) !important;
+  border-left: 4px solid #f59e0b !important;
+}
+html.dark .Toastify__toast--info {
+  background: linear-gradient(135deg, #1a1a2e 0%, #1e2a33 100%) !important;
+  border-left: 4px solid #3b82f6 !important;
+}
+html.dark .Toastify__close-button { 
+  color: #9ca3af !important; 
+}
+html.dark .Toastify__close-button:hover { 
+  color: #f3f4f6 !important; 
+}
+html.dark .Toastify__progress-bar { 
+  background-color: #f97316 !important; 
+}
+html.dark .Toastify__toast--success .Toastify__progress-bar { 
+  background-color: #22c55e !important; 
+}
+html.dark .Toastify__toast--error .Toastify__progress-bar { 
+  background-color: #ef4444 !important; 
+}
+html.dark .Toastify__toast--warning .Toastify__progress-bar { 
+  background-color: #f59e0b !important; 
+}
+html.dark .Toastif/* React-Toastify */
+html.dark .Toastify__toast { 
+  background-color: #000000 !important; 
+  color: #ffffff !important;
+  border: 1px solid #1f1f1f !important;
+}
+
+html:not(.dark) .Toastify__toast {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+html.dark .Toastify__toast--success {
+  background: linear-gradient(135deg, #052e16 0%, #000000 100%) !important;
+  border-left: 4px solid #22c55e !important;
+}
+
+html:not(.dark) .Toastify__toast--success {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%) !important;
+  border-left: 4px solid #22c55e !important;
+}
+
+html.dark .Toastify__toast--error {
+  background: linear-gradient(135deg, #2e0505 0%, #000000 100%) !important;
+  border-left: 4px solid #ef4444 !important;
+}
+
+html:not(.dark) .Toastify__toast--error {
+  background: linear-gradient(135deg, #fef2f2 0%, #ffffff 100%) !important;
+  border-left: 4px solid #ef4444 !important;
+}
+
+html.dark .Toastify__toast--warning {
+  background: linear-gradient(135deg, #2e2505 0%, #000000 100%) !important;
+  border-left: 4px solid #f59e0b !important;
+}
+
+html:not(.dark) .Toastify__toast--warning {
+  background: linear-gradient(135deg, #fffbeb 0%, #ffffff 100%) !important;
+  border-left: 4px solid #f59e0b !important;
+}
+
+html.dark .Toastify__toast--info {
+  background: linear-gradient(135deg, #05052e 0%, #000000 100%) !important;
+  border-left: 4px solid #3b82f6 !important;
+}
+
+html:not(.dark) .Toastify__toast--info {
+  background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%) !important;
+  border-left: 4px solid #3b82f6 !important;
+}
+
+html.dark .Toastify__close-button { 
+  color: #a3a3a3 !important; 
+}
+
+html.dark .Toastify__close-button:hover { 
+  color: #ffffff !important; 
+}
+
+html:not(.dark) .Toastify__close-button { 
+  color: #737373 !important; 
+}
+
+html:not(.dark) .Toastify__close-button:hover { 
+  color: #000000 !important; 
+}
+
+html.dark .Toastify__progress-bar { 
+  background-color: #f97316 !important; 
+}
+
+html:not(.dark) .Toastify__progress-bar { 
+  background-color: #f97316 !important; 
+}
+
+html.dark .Toastify__toast--success .Toastify__progress-bar { 
+  background-color: #22c55e !important; 
+}
+
+html:not(.dark) .Toastify__toast--success .Toastify__progress-bar { 
+  background-color: #22c55e !important; 
+}
+
+html.dark .Toastify__toast--error .Toastify__progress-bar { 
+  background-color: #ef4444 !important; 
+}
+
+html:not(.dark) .Toastify__toast--error .Toastify__progress-bar { 
+  background-color: #ef4444 !important; 
+}
+
+html.dark .Toastify__toast--warning .Toastify__progress-bar { 
+  background-color: #f59e0b !important; 
+}
+
+html:not(.dark) .Toastify__toast--warning .Toastify__progress-bar { 
+  background-color: #f59e0b !important; 
+}
+
+html.dark .Toastify__toast--info .Toastify__progress-bar { 
+  background-color: #3b82f6 !important; 
+}
+
+html:not(.dark) .Toastify__toast--info .Toastify__progress-bar { 
+  background-color: #3b82f6 !important; 
+}
+
+html.dark .Toastify__toast-icon {
+  color: #ffffff !important;
+}
+
+html:not(.dark) .Toastify__toast-icon {
+  color: #000000 !important;
+}
+
+
+/* ============================================
+   FORCE LIGHT MODE FOR SPECIFIC SECTIONS
+   (Add 'keep-light' class to stay in light mode)
+   ============================================ */
+html.dark .keep-light .bg-white {
+  background-color: #ffffff !important;
+}
+html.dark .keep-light .bg-gray-50 {
+  background-color: #f9fafb !important;
+}
+html.dark .keep-light .bg-gray-100 {
+  background-color: #f3f4f6 !important;
+}
+html.dark .keep-light .text-black {
+  color: #000000 !important;
+}
+html.dark .keep-light .text-gray-700,
+html.dark .keep-light .text-gray-800,
+html.dark .keep-light .text-gray-900 {
+  color: #374151 !important;
+}
+html.dark .keep-light .text-gray-500,
+html.dark .keep-light .text-gray-600 {
+  color: #6b7280 !important;
+}
+html.dark .keep-light .border-gray-200,
+html.dark .keep-light .border-gray-300 {
+  border-color: #e5e7eb !important;
+}
+html.dark .keep-light input,
+html.dark .keep-light select,
+html.dark .keep-light textarea {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-color: #d1d5db !important;
+}
+html.dark .keep-light input::placeholder,
+html.dark .keep-light textarea::placeholder {
+  color: #6b7280 !important;
+}
