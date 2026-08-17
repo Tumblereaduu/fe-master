@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,900;1,14..32,900&family=League+Spartan:wght@500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,900;1,14..32,900&family=League+Spartan:wght@500&family=Martel+Sans:wght@200;300;400;600;700;800;900&display=swap');
+
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,900;1,14..32,900&family=League+Spartan:wght@500&family=Martel+Sans:wght@200;300;400;600;700;800;900&display=swap'); */
+
+
+*{
+  font-family: "Inter", serif;
+}
+
+/* League Spartan for specific usage */
+.font-leaguespart {
+  font-family: "League Spartan", sans-serif;
+}
+
+/* Hide scrollbar but keep scroll functionality */
+.scroll-area {
+  overflow-y: auto;
+  scrollbar-width: none; 
+}
+
+.scroll-area::-webkit-scrollbar {
+  display: none; 
+}

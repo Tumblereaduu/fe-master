@@ -1,0 +1,350 @@
+/* ===== PRO LOGIN BUTTON ===== */
+.lgn-pro-login {
+    position: fixed;
+    bottom: 220px;
+    right: 840px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    animation: lgnProFloat 4s ease-in-out infinite;
+}
+
+.lgn-pro-login-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 28px 14px 24px;
+    border-radius: 14px;
+    border: 1.5px solid transparent;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.85) 0%,
+        rgba(0, 0, 0, 0.75) 50%,
+        rgba(0, 0, 0, 0.8) 100%
+    );
+    backdrop-filter: blur(40px) saturate(2.2) brightness(1.1);
+    -webkit-backdrop-filter: blur(40px) saturate(2.2) brightness(1.1);
+    text-decoration: none;
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow:
+        0 4px 24px rgba(0, 0, 0, 0.3),
+        0 1px 4px rgba(0, 0, 0, 0.15),
+        0 0 40px rgba(247, 147, 26, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.03);
+    animation: lgnPulseGlow 3s ease-in-out infinite;
+}
+
+/* ===== SNAKE LAYER — Pro Button ===== */
+.lgn-pro-login-link > .lgn-snake-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    padding: 1.5px;
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+.lgn-pro-login-link > .lgn-snake-layer::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        transparent,
+        rgba(247, 147, 26, 0.15) 8%,
+        rgba(247, 147, 26, 0.5) 14%,
+        #F7931A 18%,
+        rgba(247, 147, 26, 0.5) 22%,
+        rgba(247, 147, 26, 0.15) 28%,
+        transparent 35%
+    );
+    animation: lgnRotateSnake 2.5s linear infinite;
+}
+
+.lgn-pro-login-link > .lgn-snake-layer::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: inherit;
+    background: conic-gradient(
+        transparent,
+        rgba(247, 147, 26, 0.08) 10%,
+        rgba(247, 147, 26, 0.2) 18%,
+        transparent 28%
+    );
+    animation: lgnRotateSnake 2.5s linear infinite;
+    filter: blur(6px);
+    z-index: -1;
+}
+
+/* ===== PULSE GLOW ===== */
+@keyframes lgnPulseGlow {
+    0%, 100% {
+        box-shadow:
+            0 4px 24px rgba(0, 0, 0, 0.3),
+            0 1px 4px rgba(0, 0, 0, 0.15),
+            0 0 40px rgba(247, 147, 26, 0.06),
+            inset 0 1px 0 rgba(255, 255, 255, 0.15),
+            inset 0 -1px 0 rgba(255, 255, 255, 0.03);
+    }
+    50% {
+        box-shadow:
+            0 4px 32px rgba(0, 0, 0, 0.35),
+            0 1px 4px rgba(0, 0, 0, 0.15),
+            0 0 60px rgba(247, 147, 26, 0.12),
+            0 0 80px rgba(247, 147, 26, 0.04),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2),
+            inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+    }
+}
+
+/* ===== LIGHT SWEEP ===== */
+.lgn-pro-login-link::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        105deg,
+        transparent 20%,
+        rgba(255, 255, 255, 0.04) 35%,
+        rgba(255, 255, 255, 0.12) 50%,
+        rgba(255, 255, 255, 0.04) 65%,
+        transparent 80%
+    );
+    transform: skewX(-20deg);
+    pointer-events: none;
+    animation: lgnLightSweep 4s ease-in-out infinite;
+    z-index: 2;
+    border-radius: inherit;
+}
+
+@keyframes lgnLightSweep {
+    0% { left: -100%; }
+    40% { left: 150%; }
+    100% { left: 150%; }
+}
+
+/* ===== INNER GRADIENT OVERLAY ===== */
+.lgn-pro-login-link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        transparent 40%,
+        transparent 60%,
+        rgba(255, 255, 255, 0.03) 100%
+    );
+    pointer-events: none;
+    z-index: 2;
+    transition: opacity 0.5s ease;
+}
+
+.lgn-pro-login-link > *:not(.lgn-snake-layer) {
+    position: relative;
+    z-index: 3;
+}
+
+/* ===== HOVER STATE ===== */
+.lgn-pro-login-link:hover > .lgn-snake-layer {
+    padding: 2px;
+    filter: brightness(1.4);
+}
+
+.lgn-pro-login-link:hover > .lgn-snake-layer::after {
+    background: conic-gradient(
+        transparent,
+        rgba(247, 147, 26, 0.2) 6%,
+        rgba(247, 147, 26, 0.7) 12%,
+        #F7931A 16%,
+        #FFB84D 18%,
+        #F7931A 20%,
+        rgba(247, 147, 26, 0.7) 24%,
+        rgba(247, 147, 26, 0.2) 30%,
+        transparent 38%
+    );
+    animation-duration: 1.8s;
+}
+
+.lgn-pro-login-link:hover > .lgn-snake-layer::before {
+    filter: blur(10px);
+    background: conic-gradient(
+        transparent,
+        rgba(247, 147, 26, 0.15) 8%,
+        rgba(247, 147, 26, 0.35) 16%,
+        transparent 26%
+    );
+    animation-duration: 1.8s;
+}
+
+@keyframes lgnHoverGlow {
+    0%, 100% {
+        box-shadow:
+            0 12px 48px rgba(0, 0, 0, 0.35),
+            0 4px 12px rgba(0, 0, 0, 0.2),
+            0 0 80px rgba(247, 147, 26, 0.2),
+            0 0 120px rgba(247, 147, 26, 0.06),
+            inset 0 1px 0 rgba(255, 255, 255, 0.25),
+            inset 0 -1px 0 rgba(255, 255, 255, 0.06);
+    }
+    50% {
+        box-shadow:
+            0 12px 56px rgba(0, 0, 0, 0.4),
+            0 4px 12px rgba(0, 0, 0, 0.2),
+            0 0 100px rgba(247, 147, 26, 0.3),
+            0 0 150px rgba(247, 147, 26, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3),
+            inset 0 -1px 0 rgba(255, 255, 255, 0.08);
+    }
+}
+
+/* ===== ACTIVE STATE ===== */
+.lgn-pro-login-link:active {
+    transform: translateY(0) scale(0.97);
+    backdrop-filter: blur(30px) saturate(1.8);
+    -webkit-backdrop-filter: blur(30px) saturate(1.8);
+    box-shadow:
+        0 2px 12px rgba(0, 0, 0, 0.25),
+        0 0 30px rgba(247, 147, 26, 0.12),
+        inset 0 2px 4px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition-duration: 0.12s;
+    animation: none;
+}
+
+.lgn-pro-login-link:active > .lgn-snake-layer {
+    filter: brightness(0.8);
+    opacity: 0.7;
+}
+
+/* ===== TEXT & ICON ===== */
+.lgn-pro-login-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.lgn-pro-login-text-small {
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.lgn-pro-login-text-main {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 0.3px;
+    line-height: 1.2;
+    transition: color 0.3s ease;
+}
+
+.lgn-pro-login-link:hover .lgn-pro-login-text-small {
+    color: rgba(247, 147, 26, 0.6);
+}
+
+.lgn-pro-login-link:hover .lgn-pro-login-text-main {
+    color: #fff;
+}
+
+.lgn-pro-login-icon {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lgn-pro-login-icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.lgn-pro-login-link:hover .lgn-pro-login-icon {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px rgba(247, 147, 26, 0.4));
+}
+
+/* ===== FLOAT ANIMATION ===== */
+@keyframes lgnProFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+/* ===== SNAKE BORDER ANIMATION ===== */
+@keyframes lgnRotateSnake {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .lgn-pro-login {
+        bottom: 24px;
+        right: 20px;
+    }
+    .lgn-pro-login-link {
+        padding: 12px 20px 12px 18px;
+        gap: 12px;
+    }
+    .lgn-pro-login-text-small {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+    .lgn-pro-login-text-main {
+        font-size: 14px;
+    }
+    .lgn-pro-login-icon {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .lgn-pro-login {
+        bottom: 400px;
+        right: 16px;
+        left: 16px;
+        justify-content: center;
+        width: 115%;
+    }
+    .lgn-pro-login-link {
+        width: 80%;
+        justify-content: center;
+        padding: 14px 24px;
+        gap: 14px;
+        margin-right: 83px;
+    }
+    .lgn-pro-login-text-main {
+        font-size: 15px;
+    }
+}
