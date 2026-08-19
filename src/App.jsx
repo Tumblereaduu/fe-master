@@ -83,23 +83,8 @@ import { AccountTypeProvider } from "./Component/hooks/accountTypeContext";
 import DemoBuyOrder from "./Component/orderPage/DemoBuyOrder";
 import DemoSellOrder from "./Component/orderPage/DemoSellOrder";
 import AdminProtectedRoute from "./Component/ProtectedRoutes/AdminProtectedRoute";
-import MasterProtectedRoute from "./Component/ProtectedRoutes/MasterProtectedRoute";
 import AddKYC from "./Component/AdminKYC/AddKYC";
 import AdminLP from "./Component/AdminLP/AdminLP";
-import MasterLogin from "./Component/Master/Login/MasterLogin";
-import MasterDashboard from "./Component/Master/Dashboard/MasterDashboard";
-import ClientsPage from "./Component/Master/Clients/ClientsPage";
-import CreateClient from "./Component/Master/Clients/CreateClient";
-import ClientDetails from "./Component/Master/Clients/ClientDetails";
-import EditClient from "./Component/Master/Clients/EditClient";
-import DomainsPage from "./Component/Master/Domains/DomainsPage";
-import CreateDomain from "./Component/Master/Domains/CreateDomain";
-import DomainDetails from "./Component/Master/Domains/DomainDetails";
-import EditDomain from "./Component/Master/Domains/EditDomain";
-import AdminsPage from "./Component/Master/Admins/AdminsPage";
-import CreateAdmin from "./Component/Master/Admins/CreateAdmin";
-import AdminDetails from "./Component/Master/Admins/AdminDetails";
-import EditMasterAdmin from "./Component/Master/Admins/EditAdmin";
 import IBDashboard from "./Component/IB/User/IBDashboard";
 import IBCommision from "./Component/IB/Admin/IBCommision";
 import IBDeposit from "./Component/IB/User/IBDeposit";
@@ -142,28 +127,6 @@ function AppWrapper() {
         <Route path="/login" element={<Login />} />
         <Route path="/navbar" element={<Navbar />} />
         <Route path="/sidebar" element={<Sidebar />} />
-
-        {/* ─── MASTER ADMIN ROUTES ─── */}
-        <Route path="/master/login" element={<MasterLogin />} />
-        <Route path="/master/dashboard" element={<MasterProtectedRoute><MasterDashboard /></MasterProtectedRoute>} />
-        
-        {/* Client Management */}
-        <Route path="/master/clients" element={<MasterProtectedRoute><ClientsPage /></MasterProtectedRoute>} />
-        <Route path="/master/clients/create" element={<MasterProtectedRoute><CreateClient /></MasterProtectedRoute>} />
-        <Route path="/master/clients/:clientId" element={<MasterProtectedRoute><ClientDetails /></MasterProtectedRoute>} />
-        <Route path="/master/clients/:clientId/edit" element={<MasterProtectedRoute><EditClient /></MasterProtectedRoute>} />
-        
-        {/* Domain Management */}
-        <Route path="/master/domains" element={<MasterProtectedRoute><DomainsPage /></MasterProtectedRoute>} />
-        <Route path="/master/domains/create" element={<MasterProtectedRoute><CreateDomain /></MasterProtectedRoute>} />
-        <Route path="/master/domains/:domainId" element={<MasterProtectedRoute><DomainDetails /></MasterProtectedRoute>} />
-        <Route path="/master/domains/:domainId/edit" element={<MasterProtectedRoute><EditDomain /></MasterProtectedRoute>} />
-        
-        {/* Admin Management */}
-        <Route path="/master/admins" element={<MasterProtectedRoute><AdminsPage /></MasterProtectedRoute>} />
-        <Route path="/master/admins/create" element={<MasterProtectedRoute><CreateAdmin /></MasterProtectedRoute>} />
-        <Route path="/master/admins/:adminId" element={<MasterProtectedRoute><AdminDetails /></MasterProtectedRoute>} />
-        <Route path="/master/admins/:adminId/edit" element={<MasterProtectedRoute><EditMasterAdmin /></MasterProtectedRoute>} />
 
         {/* Register Page */}
         <Route path="/register" element={<Register />} />

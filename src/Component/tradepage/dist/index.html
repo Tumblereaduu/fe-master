@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/assets/d_logo-BqsyA11c.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>oneblue</title>
+    <script type="module" crossorigin src="/assets/index-DS_mTmP1.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-TQhnMrSF.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  
+    <!-- Start of Tawk.to Script -->
+      <script type="text/javascript">
+    (function () {
+      var BLOCKED_PATHS = [/^\/trading/, /^\/dashboard/, /^\/profile/, /^\/position/ , /^\/help/, /^\/deposit/, /^\/withdraw/, /^\/ib\/dashboard/, /^\/ib\/kyc/, /^\/ib\/clients/, /^\/ib\/earnings/, /^\/ib\/deposit/, /^\/lkjdtruovehwymabig1\/vmkp/];
+
+      function isBlockedPath() {
+        return BLOCKED_PATHS.some(function (rule) {
+          return rule.test(window.location.pathname);
+        });
+      }
+      var Tawk_API = window.Tawk_API || {};
+      window.Tawk_API = Tawk_API;
+
+      function safeToggleWidget() {
+        if (!window.Tawk_API) return;
+
+        // prevent crash if Tawk not ready
+        if (typeof Tawk_API.hideWidget !== "function") return;
+        if (typeof Tawk_API.showWidget !== "function") return;
+
+        if (isBlockedPath()) {
+          Tawk_API.hideWidget();
+        } else {
+          Tawk_API.showWidget();
+        }
+      }
+
+      Tawk_API.onLoad = function () {
+        safeToggleWidget(); // run once when loaded
+      };
+
+      var s1 = document.createElement("script");
+      s1.async = true;
+      s1.src = "https://embed.tawk.to/6942a0834006b2197e4e0707/1jcm460j3";
+      s1.charset = "UTF-8";
+      s1.setAttribute("crossorigin", "*");
+      document.head.appendChild(s1);
+
+      // SPA route detection
+      window.addEventListener("popstate", safeToggleWidget);
+
+      ["pushState", "replaceState"].forEach(function (method) {
+        var original = history[method];
+        history[method] = function () {
+          original.apply(this, arguments);
+          safeToggleWidget();
+        };
+      });
+    })();
+    </script>
+  </body>
+</html>

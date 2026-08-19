@@ -476,7 +476,7 @@ export default function Login() {
             </p>
           </div> */}
 
-          {/* <div className="mt-6 space-y-2 text-gray-700 text-[13px] sm:text-lg absolute bottom-5 left-6">
+          <div className="mt-6 space-y-2 text-gray-700 text-[13px] sm:text-lg absolute bottom-5 left-6">
             <p className="flex items-center gap-2 font-medium text-gray-800 mb-2">
               <FaPhoneAlt className="text-blue-600 " /> {description}
             </p>
@@ -486,7 +486,7 @@ export default function Login() {
             <p className="flex items-center gap-2">
               <FaEnvelope className="text-blue-500" /> Mail: {adminEmail}
             </p>
-          </div> */}
+          </div>
         </div>
 
         {/* Right Section (Form + Mobile Illustration) */}

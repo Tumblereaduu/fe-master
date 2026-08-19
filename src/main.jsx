@@ -8,11 +8,9 @@ import { ThemeProvider } from './context/ThemeContext.jsx'      // ← Dark mode
 import "@fontsource/inter";
 import "@fontsource/league-spartan";
 import { LivePriceProvider } from './Component/hooks/tradePage/useLivePriceContext.jsx'
-import { TenantProvider } from "./context/TenantContext.jsx";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <TenantProvider>
     <ThemeProvider>                 {/* ← Dark mode wrap */}
       <AuthProvider>
         <LivePriceProvider>
@@ -20,6 +18,5 @@ createRoot(document.getElementById('root')).render(
         </LivePriceProvider>
       </AuthProvider>
     </ThemeProvider>
-    </TenantProvider>
   </StrictMode>,
 )
