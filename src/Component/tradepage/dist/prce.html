@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FCSAPI Forex Full List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #020617;
+      color: #fff;
+      padding: 20px;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid #1e293b;
+      text-align: left;
+    }
+
+    th {
+      background: #020617;
+      position: sticky;
+      top: 0;
+    }
+
+    tr:hover {
+      background: #0f172a;
+    }
+
+    .status {
+      margin-bottom: 10px;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Forex Symbols – Full List (FCSAPI)</h2>
+  <div class="status" id="status">Loading...</div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Ticker</th>
+        <th>Symbol</th>
+        <th>Name</th>
+        <th>Exchange</th>
+        <th>Base</th>
+        <th>Quote</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+
+  <script>
+    const API_KEY = "tazGE0Won8sXYWaQzcVCjaN0drdON";
+    const API_URL = `https://api-v4.fcsapi.com/forex/list?access_key=tazGE0Won8sXYWaQzcVCjaN0drdON&exchange=ONA`;
+
+    async function loadFullList() {
+      try {
+        const res = await fetch(API_URL);
+        const data = await res.json();
+
+        const tbody = document.getElementById("tableBody");
+        const status = document.getElementById("status");
+
+        tbody.innerHTML = "";
+
+        if (!data.status || !data.response) {
+          status.innerText = "Failed to load data";
+          return;
+        }
+
+        data.response.forEach((item, index) => {
+          const tr = document.createElement("tr");
+
+          tr.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${item.ticker}</td>
+            <td>${item.profile.symbol}</td>
+            <td>${item.profile.name}</td>
+            <td>${item.profile.exchange}</td>
+            <td>${item.meta.base_currency}</td>
+            <td>${item.profile.currency}</td>
+          `;
+
+          tbody.appendChild(tr);
+        });
+
+        status.innerText = `Total Forex Pairs: ${data.response.length}`;
+
+      } catch (err) {
+        console.error(err);
+        document.getElementById("status").innerText = "API error";
+      }
+    }
+
+    loadFullList();
+  </script>
+
+</body>
+</html>

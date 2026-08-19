@@ -811,31 +811,6 @@ export default function OpenTradePage() {
               />
             </div>
           </div>
-          {/* <InstrumentSidebar
-            isMobileView={isMobileView}
-            showSidebarMobile={showSidebarMobile}
-            activeTab={activeTab}
-            setActiveTab={setActiveTab}
-            favorites={favorites}
-            setFavorites={setFavorites}
-            allPairs={allPairs}
-            allCategories={allCategories}
-            openCategory={openCategory}
-            toggleCategory={toggleCategory}
-            openMobileItem={openMobileItem}
-            setOpenMobileItem={setOpenMobileItem}
-            PairIcons={PairIcons}
-            handleOpenOrder={handleOpenOrder}
-            setSelectedSymbol={setSelectedSymbol}
-            setAnalysisSymbol={setAnalysisSymbol}
-            setShowAnalysis={setShowAnalysis}
-            removeFromFavorites={removeFromFavorites}
-            addToFavorites={addToFavorites}
-            handleSelectInstrument={handleSelectInstrument}
-            forexIcon={forexIcon}
-            currentView={currentView}
-            setCurrentView={setCurrentView}
-          /> */}
         </div>);
     }
 

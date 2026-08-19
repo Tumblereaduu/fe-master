@@ -12,7 +12,7 @@ export default function Navbar() {
       <nav className="fixed top-0 left-0 w-full bg-white shadow-md flex items-center border-b-3 border-blue-200 justify-between px-4 py-3 z-50 md:px-6">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <Link to="/trading">
+          <Link to="/dashboard">
             <img src={Logo} alt="Logo" className="h-9 cursor-pointer" />
           </Link>
         </div>

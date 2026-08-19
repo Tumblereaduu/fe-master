@@ -102,7 +102,7 @@ const NavbarForAccount = ({ isDark: isDarkProp }) => {
           <img
             src={isDark ? LogoYellow : LogoBlack}
             alt="Logo"
-            className="h-13 cursor-pointer transition-opacity duration-200"
+            className="h-9 cursor-pointer transition-opacity duration-200"
           />
           <span
             className={`px-3 py-1 text-sm mt-2 font-semibold rounded-sm transition-colors duration-300
